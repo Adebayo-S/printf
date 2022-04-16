@@ -33,10 +33,16 @@ int _printf(const char *format, ...)
 		{
 			switch (format[i + 1])
 			{
-				case '%': {buff_append(buffer[j], format[i + 1], parse_char()); j++; break;}
-				case 'c': {buff_append(buffer[j], (char)va_arg(arg, int)); j++; break;}
+				case '%': {buffer[j] = buff_append(format[i + 1], parse_char); j++; break;}
+				case 'c': {buffer[j] = buff_append((char)va_arg(arg, int), parse_char); j++; break;}
 			}
+		} else
+		{
+			buffer[j] = format[i];
+			j++;
 		}
 		i++;
 	}
+	print_buff(buffer, j + 1);
+	return(j);
 }
