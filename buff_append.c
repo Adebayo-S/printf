@@ -8,15 +8,7 @@
  * Return: index of buffer pointer
  */
 
-unsigned int buff_append(char *buff, char c, unsigned int ibuff)
+unsigned int buff_append(char *buff, char *c, char (*parse_char)(char))
 {
-	if (ibuff == 1000)
-	{
-		print_buf(buff, ibuff);
-		ibuff = 0;
-	}
-
-	buff[ibuff] = c;
-	ibuff++;
-	return (ibuff);
+	*buff = parse_char(*c);
 }
