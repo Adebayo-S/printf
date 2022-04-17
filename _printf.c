@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	unsigned int i, j;
+	unsigned int i, buff_count;
 	char* buffer;
 
 	if (!format)
@@ -24,25 +24,30 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(arg, format);
-	i = 0, j = 0;
+	i = 0, buff_count = 0;
 	while (format && format[i] != '\0')
 	{
-		buffer[j] = format[i];
-
 		if (format[i] == '%')
 		{
 			switch (format[i + 1])
 			{
-				case '%': {buffer[j] = buff_append(format[i + 1], parse_char); j++; break;}
-				case 'c': {buffer[j] = buff_append((char)va_arg(arg, int), parse_char); j++; break;}
+				case '%':
+						buffer[buff_count] = '%', buff_count++;
+						break;
+				case 'c':
+						buff_count = buff_append(&buffer[buff_count], arg, buff_count, parse_char); buff_count++;
+						break;
+				case 's':
+						//buff_count = buff_append(buffer[buff_count], va_arg(arg, int), parse_char); buff_count++;
+						break;
 			}
 		} else
 		{
-			buffer[j] = format[i];
-			j++;
+			buffer[buff_count] = format[i];
+			buff_count++;
 		}
 		i++;
 	}
-	print_buff(buffer, j + 1);
-	return(j);
+	print_buff(buffer, buff_count++);
+	return(buff_count);
 }
