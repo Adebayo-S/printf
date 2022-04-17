@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * parse_str - writes the string
+ * parse_string - writes the string
  * @args: string list of arguments
  * @buff: a character string
  * @buff_count: index for buffer pointer
  * Return: The number of characters printed.
  */
-int parse_str(va_list args, char *buff, unsigned int buff_count)
+int parse_string(va_list args, char *buff, unsigned int buff_count)
 {
     char *str;
     unsigned int i;
