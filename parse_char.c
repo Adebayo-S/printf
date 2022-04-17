@@ -2,9 +2,12 @@
 
 /**
  * parse_char - returns the character
- * @c: pointer to argument
+ * @rec: pointer to argument
  * Return: typecasted argument
  */
-char parse_char(char* c) {
-	return ((char)*c);
+char parse_char(va_list arg)
+{
+	int arg_c = va_arg(arg, int);
+
+	return ((char)arg_c);
 }
