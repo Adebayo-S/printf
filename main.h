@@ -12,8 +12,7 @@ int print_buff(char *buff, unsigned int nbuff);
 int str_len(char *s);
 char *_strcpy(char *dest, char *src);
 char parse_char(va_list arg);
-int parse_string(va_list args, char *buff, unsigned int buff_count);
-int parse_string(va_list args, char *buff, unsigned int buff_count);
-char parse_char(va_list arg);
+int parse_string(char *string, va_list arg, int buff_count);
+int parse_int(char *string, va_list list, int buff_count);
 
 #endif
