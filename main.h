@@ -7,9 +7,10 @@
 #include <stdio.h>
 
 int _printf(const char *format, ...);
-unsigned int buff_append(char *buff, char *c, char (*parse_char)(char));
+char buff_append(char *buff_dest, va_list arg, unsigned int buff_count, char (*parser)(va_list));
 int print_buff(char *buff, unsigned int nbuff);
 int str_len(char *s);
 char *_strcpy(char *dest, char *src);
+char parse_char(va_list arg);
 
 #endif
