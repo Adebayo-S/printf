@@ -4,7 +4,7 @@
  _printf - format and print data.
 .SH SYNOPSIS
 .nf
-.BI printf FORMAT [ARGUMENT)...
+.BI printf FORMAT [ARGUMENT]...
 .PP
 .BI "#include 'main.h'"
 .BI "#include <stdarg.h>"

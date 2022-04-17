@@ -12,5 +12,6 @@ int print_buff(char *buff, unsigned int nbuff);
 int str_len(char *s);
 char *_strcpy(char *dest, char *src);
 char parse_char(va_list arg);
+int parse_string(va_list args, char *buff, unsigned int buff_count);
 
 #endif
