@@ -8,12 +8,17 @@
  * Return: index of buffer pointer
  */
 
-char buff_append(char *buff_dest, va_list arg, unsigned int buff_count, char (*parser)(va_list))
+int buff_append(char *buff_dest, va_list arg, int buff_count, char type)
 {
-	int arg_c = va_arg(arg, int);
-
-	*buff_dest = parser(arg);
-	buff_count++;
-
-	return (buff_count);
+	switch (type)
+	{
+		case 'c':
+				*buff_dest = parse_char(arg);
+				buff_count++;
+				return (buff_count);
+				break;
+		case 's':
+				parse_string(*buff_dest, arg, buff_count);
+				break;
+	}
 }
