@@ -2,13 +2,18 @@
 
 /**
  * buff_append - Concatinates the buffer characters
- * @buff: buffer pointer
- * @c: character
- * @ibuff: index of buffer pointer
+ * @buff_dest: buffer destination
+ * @arg: pointer to va_arg return
+ * @parse_char: pointer to parse_char function
  * Return: index of buffer pointer
  */
 
-unsigned int buff_append(char *buff, char *c, char (*parse_char)(char))
+char buff_append(char *buff_dest, va_list arg, unsigned int buff_count, char (*parser)(va_list))
 {
-	*buff = parse_char(*c);
+	int arg_c = va_arg(arg, int);
+
+	*buff_dest = parser(arg);
+	buff_count++;
+
+	return (buff_count);
 }
