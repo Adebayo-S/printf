@@ -29,16 +29,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			switch (format[i + 1])
+			i++;
+			switch (format[i])
 			{
 				case '%':
 						buffer[buff_count] = '%', buff_count++;
 						break;
 				case 'c':
-						buff_count = buff_append(&buffer[buff_count], arg, buff_count, parse_char); buff_count++;
+						buff_count = buff_append(&buffer[buff_count], arg, buff_count, 'c'); buff_count++;
 						break;
 				case 's':
-						//buff_count = buff_append(buffer[buff_count], va_arg(arg, int), parse_char); buff_count++;
+						buff_count = buff_append(&buffer[buff_count], arg, buff_count, 's'); buff_count++;
 						break;
 			}
 		} else
