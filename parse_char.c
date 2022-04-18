@@ -5,9 +5,11 @@
  * @rec: pointer to argument
  * Return: typecasted argument
  */
-char parse_char(va_list arg)
+int parse_char(char *buff_dest, va_list arg, int buff_count)
 {
-	int arg_c = va_arg(arg, int);
+	char c = va_arg(arg, int);
 
-	return ((char)arg_c);
+	buff_dest[buff_count] = c;
+
+	return (buff_count);
 }
