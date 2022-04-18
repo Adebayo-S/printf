@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	unsigned int i, buff_count;
+	int i, buff_count;
 	char *buffer;
 
 	if (!format)
@@ -41,12 +41,10 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				buff_count = parse_string(buffer, arg, buff_count);
-				buff_count++;
 				break;
 			case 'i':
 			case 'd':
 				buff_count = parse_int(buffer, arg, buff_count);
-				buff_count++;
 				break;
 			}
 		}
