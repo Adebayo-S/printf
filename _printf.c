@@ -48,10 +48,6 @@ int _printf(const char *format, ...)
 				buff_count = parse_int(buffer, arg, buff_count);
 				buff_count++;
 				break;
-			default:
-				i--;
-				buffer[buff_count] = '%';
-				buffer[buff_count] = format[i], buff_count++;
 			}
 		}
 		else
