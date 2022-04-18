@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 				buff_count = parse_string(buffer, arg, buff_count);
 				buff_count++;
 				break;
+			case 'i':
 			case 'd':
 				buff_count = parse_int(buffer, arg, buff_count);
 				buff_count++;
