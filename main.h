@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 int buff_append(char *buff_dest, va_list arg, int buff_count, char type);
