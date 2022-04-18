@@ -10,21 +10,20 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i, buff_count;
+	int i = 0, buff_count = 0;
 	char *buffer;
 
 	if (!format)
 		return (-1);
 
-	buffer = malloc(sizeof(char) * 1500);
+	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
 	{
-		return (-1);
 		free(buffer);
+		return (-1);
 	}
 
 	va_start(arg, format);
-	i = 0, buff_count = 0;
 	while (format && format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -36,8 +35,7 @@ int _printf(const char *format, ...)
 				buffer[buff_count] = '%', buff_count++;
 				break;
 			case 'c':
-				buff_count = parse_char(buffer, arg, buff_count);
-				buff_count++;
+				buff_count = parse_char(buffer, arg, buff_count), buff_count++;
 				break;
 			case 's':
 				buff_count = parse_string(buffer, arg, buff_count);
@@ -49,10 +47,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
-			buffer[buff_count] = format[i];
-			buff_count++;
-		}
+			buffer[buff_count] = format[i], buff_count++;
 		i++;
 	}
 	buffer[buff_count] = '\0';
