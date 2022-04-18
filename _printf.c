@@ -31,9 +31,6 @@ int _printf(const char *format, ...)
 			i++;
 			switch (format[i])
 			{
-			case '%':
-				buffer[buff_count] = '%', buff_count++;
-				break;
 			case 'c':
 				buff_count = parse_char(buffer, arg, buff_count), buff_count++;
 				break;
@@ -44,6 +41,8 @@ int _printf(const char *format, ...)
 			case 'd':
 				buff_count = parse_int(buffer, arg, buff_count);
 				break;
+			default:
+				buffer[buff_count] = format[i], buff_count++;
 			}
 		}
 		else
