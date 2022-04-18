@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	unsigned int i, buff_count;
-	char* buffer;
+	char *buffer;
 
 	if (!format)
 		return (-1);
@@ -32,19 +32,25 @@ int _printf(const char *format, ...)
 			i++;
 			switch (format[i])
 			{
-				case '%':
-						buffer[buff_count] = '%', buff_count++;
-						break;
-				case 'c':
-						buff_count = parse_char(buffer, arg, buff_count); buff_count++;
-						break;
-				case 's':
-						buff_count = parse_string(buffer, arg, buff_count); buff_count++;
-						break;
-				default:
-						i--;
-						buffer[buff_count] = '%';
-						buffer[buff_count] = format[i], buff_count++;
+			case '%':
+				buffer[buff_count] = '%', buff_count++;
+				break;
+			case 'c':
+				buff_count = parse_char(buffer, arg, buff_count);
+				buff_count++;
+				break;
+			case 's':
+				buff_count = parse_string(buffer, arg, buff_count);
+				buff_count++;
+				break;
+			case 'd':
+				buff_count = parse_int(buffer, arg, buff_count);
+				buff_count++;
+				break;
+			default:
+				i--;
+				buffer[buff_count] = '%';
+				buffer[buff_count] = format[i], buff_count++;
 			}
 		}
 		else
@@ -58,5 +64,5 @@ int _printf(const char *format, ...)
 	print_buff(buffer, buff_count);
 	va_end(arg);
 	free(buffer);
-	return(buff_count);
+	return (buff_count);
 }
