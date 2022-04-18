@@ -36,19 +36,26 @@ int _printf(const char *format, ...)
 						buffer[buff_count] = '%', buff_count++;
 						break;
 				case 'c':
-						buff_count = buff_append(&buffer[buff_count], arg, buff_count, 'c'); buff_count++;
+						buff_count = parse_char(buffer, arg, buff_count); buff_count++;
 						break;
 				case 's':
-						buff_count = buff_append(&buffer[buff_count], arg, buff_count, 's'); buff_count++;
+						buff_count = parse_string(buffer, arg, buff_count); buff_count++;
 						break;
+				default:
+						i--;
+						buffer[buff_count] = '%';
+						buffer[buff_count] = format[i], buff_count++;
 			}
-		} else
+		}
+		else
 		{
 			buffer[buff_count] = format[i];
 			buff_count++;
 		}
 		i++;
 	}
+	buffer[buff_count] = '\0';
 	print_buff(buffer, buff_count++);
+	va_end(arg);
 	return(buff_count);
 }
