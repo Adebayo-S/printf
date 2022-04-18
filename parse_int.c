@@ -18,29 +18,28 @@ int parse_int(char *buff_dest, va_list list, int buff_count)
 	if (number < 0)
 	{
 		buff_dest[buff_count] = '-';
+		number *= -1;
 		buff_count++;
-		number = -number;
 	}
 	tmp = number;
 
 	if (number == INT_MIN)
-	{
 		tmp++;
-	}
 
 	while (tmp > 9)
 	{
-		tens = tens * 10;
-		tmp = tmp / 10;
+		tens *= 10;
+		tmp /= 10;
 	}
 
 	tmp = number;
 	while (tens > 0)
 	{
 		buff_dest[buff_count] = ('0' + tmp / tens);
-		buff_count++;
 		tmp %= tens;
 		tens /= 10;
+		buff_count++;
 	}
+
 	return (buff_count);
 }
