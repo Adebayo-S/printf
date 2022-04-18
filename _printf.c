@@ -55,7 +55,8 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	buffer[buff_count] = '\0';
-	print_buff(buffer, buff_count++);
+	print_buff(buffer, buff_count);
 	va_end(arg);
+	free(buffer);
 	return(buff_count);
 }
