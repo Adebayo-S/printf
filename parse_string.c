@@ -2,7 +2,7 @@
 
 /**
  * parse_string - writes the string
- * @string: character string
+ * @buff_dest: character string
  * @arg: list of arguments
  * @buff_count: index f buffer pointer
  * Return: The number of characters printed.
@@ -19,7 +19,8 @@ int parse_string(char *buff_dest, va_list arg, int buff_count)
 	while (value[i] != '\0')
 	{
 		buff_dest[buff_count] = value[i];
-		i++; buff_count++;
+		i++;
+		buff_count++;
 	}
 
 	return (buff_count);
