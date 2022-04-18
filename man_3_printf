@@ -23,7 +23,7 @@
 The function _printf() prints ARGUMENTS(s) according to format, or execute according to various Option.
 .PP
 .SH Conversion Specifiers
-This are the characters that specifies the type of conversion to be applied. The conversion specifiers and their meanings are: 
+This are the characters that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 .TP
 .B c
 .R The \fIint\fR argument is converted to a char, and the result is printed.
