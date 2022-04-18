@@ -1,5 +1,6 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
+#define INT_BITS (4 * 8)
 
 #include <stdarg.h>
 #include <unistd.h>
@@ -15,5 +16,6 @@ char *_strcpy(char *dest, char *src);
 int parse_char(char *buff_dest, va_list arg, int buff_count);
 int parse_string(char *buff_dest, va_list arg, int buff_count);
 int parse_int(char *string, va_list list, int buff_count);
+int parse_binary(char *buff_dest, va_list arg, int buff_count);
 
 #endif

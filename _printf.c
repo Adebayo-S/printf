@@ -41,6 +41,9 @@ int _printf(const char *format, ...)
 			case 'd':
 				buff_count = parse_int(buffer, arg, buff_count);
 				break;
+			case 'b':
+				buff_count = parse_binary(buffer, arg, buff_count);
+				break;
 			default:
 				buffer[buff_count] = format[i], buff_count++;
 			}
