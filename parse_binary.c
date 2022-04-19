@@ -3,7 +3,7 @@
 /**
  * parse_binary - substitute %b by argument number in binary
  * @buff_dest: string to change
- * @list: va_list char to change
+ * @arg: number to change
  * @buff_count: index of dst where the c of %c is
  * Return: New index
  */

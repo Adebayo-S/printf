@@ -10,20 +10,15 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, j = 0, buff_count = 0, prev_buff_count = 0;
-	char *buffer;
+	char buffer[2000];
 	va_list arg;
 	call_t container[] = {
 		{'c', parse_char}, {'s', parse_string}, {'i', parse_int}, {'d', parse_int},
 		{'%', parse_perc}, {'\0', NULL}
 	};
+
 	if (!format)
 		return (-1);
-	buffer = malloc(sizeof(char) * 1024);
-	if (!buffer)
-	{
-		free(buffer);
-		return (-1);
-	}
 
 	va_start(arg, format);
 	while (format && format[i] != '\0')
@@ -47,7 +42,8 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(arg);
+
 	buffer[buff_count] = '\0';
-	print_buff(buffer, buff_count), free(buffer);
+	print_buff(buffer, buff_count);
 	return (buff_count);
 }
