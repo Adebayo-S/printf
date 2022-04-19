@@ -15,5 +15,6 @@ char *_strcpy(char *dest, char *src);
 int parse_char(char *buff_dest, va_list arg, int buff_count);
 int parse_string(char *buff_dest, va_list arg, int buff_count);
 int parse_int(char *string, va_list list, int buff_count);
+int parse_perc(char *buff_dest, va_list arg, int buff_count);
 
 #endif
