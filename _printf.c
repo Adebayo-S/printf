@@ -28,14 +28,16 @@ int _printf(const char *format, ...)
 			i++, prev_buff_count = buff_count;
 			for (j = 0; container[j].t != '\0'; j++)
 			{
+				if (format[i] == '\0')
+					break;
 				if (format[i] == container[j].t)
 				{
 					buff_count = container[j].f(buffer, arg, buff_count);
 					break;
 				}
 			}
-			if (buff_count == prev_buff_count)
-				buffer[buff_count] = format[i], buff_count++;
+			if (buff_count == prev_buff_count && format[i])
+				i--, buffer[buff_count] = format[i], buff_count++;
 		}
 		else
 			buffer[buff_count] = format[i], buff_count++;
