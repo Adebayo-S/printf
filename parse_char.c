@@ -2,10 +2,10 @@
 
 /**
  * parse_char - returns the character
- * @buff_dest: character
+ * @buff_dest: buffer
  * @arg: list of arguments
  * @buff_count: index of buffer pointer
- * Return: typecasted argument
+ * Return: buffer index
  */
 int parse_char(char *buff_dest, va_list arg, int buff_count)
 {
