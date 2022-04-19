@@ -13,5 +13,5 @@ int parse_char(char *buff_dest, va_list arg, int buff_count)
 
 	buff_dest[buff_count] = c;
 
-	return (buff_count);
+	return (++buff_count);
 }
