@@ -3,7 +3,7 @@
 ## Description
 
 This printf project is a collaboration between Samuel Adebayo and Gerald Juwah. Who are Software Engineers studing at students of ALX school. This project involves a function named "\_printf" which would imitate the actual "printf" command located in the stdio.h library. This function contains some of the basic features and functions found in the man 3 of "printf".
-<br>
+
 What you would learn from this project:
 
 - How to use git in a team setting
@@ -11,11 +11,9 @@ What you would learn from this project:
 - The complexities of printf
 - Managing a lot of flies and finding a good workflow
 
-<br>
-
 ## Prototype
 
-> `int _printf(const char *format, ...);`
+    int _printf(const char *format, ...);
 
 ## Usage
 
@@ -28,7 +26,7 @@ The **format** contains the string that is printed. As \_printf() is variadic fu
 
 The format tags prototype is the following:
 
-> %[flags][length]specifier
+    %[flags][length]specifier
 
 If the program runs successfully, the return value is the amount of chars printed.
 
@@ -44,15 +42,80 @@ If the program runs successfully, the return value is the amount of chars printe
 
 1. Printing the string of chars "Hello ALX School":
 
-- Input: \_printf("Hello %s.", "ALX School");
-- Output: Hello ALX School
+   - Input: `\_printf("Hello %s.", "ALX School");`
+   - Output: `Hello ALX School`
 
 2. Printing an integer number:
 
-- Input: \_printf("2 + 2 is equal to %d.", 4);
-- Output: 2 + 2 is equal to 4
+   - Input: `\_printf("2 + 2 is equal to %d.", 4);`
+   - Output: `2 + 2 is equal to 4`
 
 3. Printing a binary:
 
-- Input: \_printf("98 in binary is [%b]", 98);
-- Output: 98 in binary is [1100010]
+   - Input: `\_printf("98 in binary is [%b]", 98);`
+   - Output: `98 in binary is [1100010]`
+
+## File Functions
+
+### \_printf.c
+
+the function that imitates printf(), by printing data.
+
+### main.h
+
+Header file where all Protypes are saved.
+
+### man_3_printf
+
+manpage file
+
+### parse_char.c
+
+Function that writes the Buffer Character.
+
+    /* Indetifier : %c */
+
+### parse_int.c
+
+Function that Prints an Integer.
+
+    /* Indetifier : %i or %d */
+
+### parse_string.c
+
+Function that Prints out a String.
+
+    /* Indetifier : %s */
+
+### parse_binary.c
+
+Function that Prints a Binary.
+
+    /* Indetifier : %b */
+
+### parse_perc.c
+
+Function that Prints a Percentage symbol.
+
+    /* Indetifier : %% */
+
+### parse_buff.c
+
+Function that Prints the Buffer
+
+### CONTRIBUTION.md
+
+Documentation stating the styleguide on how the work flow was carried out.
+
+### .gitignore
+
+Files to be ignored when pushing to github.
+
+### project_junkyard
+
+Function files used to run various tests on the \_printf Function.
+
+## Authors
+
+- `Samuel Adebayo` adebayo.samuel.olusegun@gmail.com
+- `Gerald Juwah` geraldjuwah@gmail.com
