@@ -9,7 +9,7 @@
 #include <limits.h>
 
 /**
- * struct call_t - struct call
+ * struct call - struct call
  * @t: t - flag for data type
  * @f: function - assocated function
  *
