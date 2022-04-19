@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * parse_char - returns the character
+ * parse_perc - returns the character
  * @buff_dest: character
  * @arg: list of arguments
  * @buff_count: index of buffer pointer
- * Return: typecasted argument
+ * Return: the buffer index
  */
 int parse_perc(char *buff_dest, va_list arg, int buff_count)
 {
