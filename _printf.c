@@ -8,7 +8,7 @@ typedef struct call
 
 call container[] = {
 		{'c', parse_char}, {'s', parse_string}, {'i', parse_int}, {'d', parse_int},
-		{'%', parse_perc}
+		{'%', parse_perc}, {'\0', NULL}
 };
 /**
  * _printf - formatted output conversion and print data.

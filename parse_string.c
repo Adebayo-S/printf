@@ -16,12 +16,17 @@ int parse_string(char *buff_dest, va_list arg, int buff_count)
 	if (value == NULL)
 		value = "(null)";
 
+	if (value[0] == '\0')
+		buff_dest[buff_count] = '\0';
+
 	while (value[i] != '\0')
 	{
 		buff_dest[buff_count] = value[i];
 		i++;
 		buff_count++;
 	}
+
+	buff_dest[buff_count] = '\0';
 
 	return (buff_count);
 }
