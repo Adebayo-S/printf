@@ -1,15 +1,5 @@
 #include "main.h"
 
-typedef struct call
-{
-	char t;
-	int (*f)(char *, va_list, int);
-} call;
-
-call container[] = {
-		{'c', parse_char}, {'s', parse_string}, {'i', parse_int}, {'d', parse_int},
-		{'%', parse_perc}, {'\0', NULL}
-};
 /**
  * _printf - formatted output conversion and print data.
  * @format: input string.
@@ -19,9 +9,9 @@ call container[] = {
 
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, buff_count = 0, prev_buff_count = 0;
-	char *buffer;
 	va_list arg;
+	int i = 0, buff_count = 0;
+	char *buffer;
 
 	if (!format)
 		return (-1);
@@ -39,25 +29,29 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			prev_buff_count = buff_count;
-			for (j = 0; container[j].t != '\0'; j++)
+			switch (format[i])
 			{
-				if (format[i] == container[j].t)
-				{
-					buff_count = container[j].f(buffer, arg, buff_count);
-					break;
-				}
-			}
-			if (buff_count == prev_buff_count)
+			case 'c':
+				buff_count = parse_char(buffer, arg, buff_count), buff_count++;
+				break;
+			case 's':
+				buff_count = parse_string(buffer, arg, buff_count);
+				break;
+			case 'i':
+			case 'd':
+				buff_count = parse_int(buffer, arg, buff_count);
+				break;
+			default:
 				buffer[buff_count] = format[i], buff_count++;
+			}
 		}
 		else
 			buffer[buff_count] = format[i], buff_count++;
 		i++;
 	}
-	va_end(arg);
 	buffer[buff_count] = '\0';
 	print_buff(buffer, buff_count);
+	va_end(arg);
 	free(buffer);
 	return (buff_count);
 }
