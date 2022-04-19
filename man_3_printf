@@ -27,6 +27,10 @@
 .SH DESCRIPTION
 The function _printf() prints ARGUMENTS(s) according to format, or execute according to various Option.
 .PP
+.SH RETURN VALUE
+Returns the number of all the characters printed, excluding the NULL byte used to end output to strings.
+.SH Format String Format
+The format string is a character string, which contains two types of directives: ordinary characters which are coppied to the output stream; and conversion specifiers. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
 .SH Conversion Specifiers
 This are the characters that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 .TP
