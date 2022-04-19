@@ -42,6 +42,17 @@ If the program runs successfully, the return value is the amount of chars printe
 
 ## Examples
 
-- \_printf("Hello, Holberton\n") prints "Hello, Holberton", followed by a new line
-- \_printf("%s", "Hello") prints "Hello"
-- \_printf("This is a number: %d", 98) prints "This is a number: 98"
+1. Printing the string of chars "Hello ALX School":
+
+- Input: \_printf("Hello %s.", "ALX School");
+- Output: Hello ALX School
+
+2. Printing an integer number:
+
+- Input: \_printf("2 + 2 is equal to %d.", 4);
+- Output: 2 + 2 is equal to 4
+
+3. Printing a binary:
+
+- Input: \_printf("98 in binary is [%b]", 98);
+- Output: 98 in binary is [1100010]
