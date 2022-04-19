@@ -11,6 +11,7 @@
 .BI "#include <unistd.h>"
 .BI "#include <stdlib.h>"
 .BI "#include <stdio.h>"
+.BI "#include <limits.h>"
 .PP
 .BI "int _printf(const char *format, ...);"
 .BI "buff_append(char *buff_dest, va_list arg, unsigned int buff_count, char (*parser)(va_list));"
@@ -18,10 +19,18 @@
 .BI "str_len(char *s);"
 .BI "*_strcpy(char *dest, char *src);"
 .BI "parse_char(va_list arg);"
+.BI "int parse_string(char *buff_dest, va_list arg, int buff_count);"
+.BI "int parse_int(char *string, va_list list, int buff_count);"
+.BI "int parse_perc(char *buff_dest, va_list arg, int buff_count);"
+.BI "int parse_binary(char *buff_dest, va_list arg, int buff_count);"
 .PP
 .SH DESCRIPTION
 The function _printf() prints ARGUMENTS(s) according to format, or execute according to various Option.
 .PP
+.SH RETURN VALUE
+Returns the number of all the characters printed, excluding the NULL byte used to end output to strings.
+.SH Format String Format
+The format string is a character string, which contains two types of directives: ordinary characters which are coppied to the output stream; and conversion specifiers. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
 .SH Conversion Specifiers
 This are the characters that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 .TP
@@ -36,13 +45,32 @@ This are the characters that specifies the type of conversion to be applied. The
 .TP
 .B %, %%
 .R If only the \fI%\fR character is written no argument is converted. The complete conversion specification is \fI%%\fR, that returns the actual sign if there in front.
-.TP
 .PP
 .SH NOTES
 .R The \fB_printf()\fR is a project collaboration between \fBSamuel Adebayo\fR and \fBGerald Juwah\fR, Students studing Software Engineering at \fBALX School\fR.
 .SH BUGS
 .R In process
 .PP
+.SH EXAMPLE
+.R To print the the string \fBHello ALX!\fR and its length in decimal.
+
+#include "main.h"
+
+int main(void)
+
+{
+
+	int length;
+
+	_printf("%s\n", "Hello, ALX!")
+
+	_printf("Hello ALX! contains %d characters\n", length);
+
+	length = _printf("Hello Holberton!");
+
+	return (0);
+
+}
 .SH SEE ALSO
 .R printf(3)
 .SH AUTHORS
