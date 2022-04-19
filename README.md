@@ -61,13 +61,19 @@ If the program runs successfully, the return value is the amount of chars printe
 
 the function that imitates printf(), by printing data.
 
+---
+
 ### main.h
 
 Header file where all Protypes are saved.
 
+---
+
 ### man_3_printf
 
 manpage file
+
+---
 
 ### parse_char.c
 
@@ -75,11 +81,15 @@ Function that writes the Buffer Character.
 
     /* Indetifier : %c */
 
+---
+
 ### parse_int.c
 
 Function that Prints an Integer.
 
     /* Indetifier : %i or %d */
+
+---
 
 ### parse_string.c
 
@@ -87,11 +97,15 @@ Function that Prints out a String.
 
     /* Indetifier : %s */
 
+---
+
 ### parse_binary.c
 
 Function that Prints a Binary.
 
     /* Indetifier : %b */
+
+---
 
 ### parse_perc.c
 
@@ -99,21 +113,31 @@ Function that Prints a Percentage symbol.
 
     /* Indetifier : %% */
 
+---
+
 ### parse_buff.c
 
 Function that Prints the Buffer
+
+---
 
 ### CONTRIBUTION.md
 
 Documentation stating the styleguide on how the work flow was carried out.
 
+---
+
 ### .gitignore
 
 Files to be ignored when pushing to github.
 
+---
+
 ### project_junkyard
 
 Function files used to run various tests on the \_printf Function.
+
+---
 
 ## Authors
 
