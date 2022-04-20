@@ -1,30 +1,21 @@
 #include "main.h"
 
 /**
- * parse_int - substitute %i by argument number
+ * parse_uint - substitute %u by argument number
  * @buff_dest: string to change
  * @arg: va_list arg to change
- * @buff_count: index of dst where the c of %c is
+ * @buff_count: index of dst where the u of %u is
  * Return: New index
  */
-int parse_int(char *buff_dest, va_list arg, int buff_count)
+int parse_uint(char *buff_dest, va_list arg, int buff_count)
 {
 	int tens = 1;
 	unsigned int tmp;
-	int number;
+	unsigned int number;
 
-	number = va_arg(arg, int);
+	number = va_arg(arg, unsigned int);
 
-	if (number < 0)
-	{
-		buff_dest[buff_count] = '-';
-		number *= -1;
-		buff_count++;
-	}
 	tmp = number;
-
-	if (number == INT_MIN)
-		tmp++;
 
 	while (tmp > 9)
 	{
