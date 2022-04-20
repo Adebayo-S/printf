@@ -41,8 +41,6 @@ int _printf(const char *format, ...)
 		}
 		else
 			buffer[buff_count] = format[i], buff_count++;
-		for (buff_count; buff_count > 1024; buff_count =- 1024)
-			;
 		i++;
 	}
 	va_end(arg);
