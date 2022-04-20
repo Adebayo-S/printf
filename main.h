@@ -30,5 +30,8 @@ int parse_string(char *buff_dest, va_list arg, int buff_count);
 int parse_int(char *buff_dest, va_list list, int buff_count);
 int parse_perc(char *buff_dest, va_list arg, int buff_count);
 int parse_binary(char *buff_dest, va_list arg, int buff_count);
+int parse_oct(char *buff_dest, va_list arg, int buff_count);
+int parse_hex(char *buff_dest, va_list arg, int buff_count);
+int parse_uint(char *buff_dest, va_list arg, int buff_count);
 
 #endif
