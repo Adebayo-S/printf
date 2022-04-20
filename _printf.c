@@ -14,12 +14,12 @@ int _printf(const char *format, ...)
 	va_list arg;
 	call_t container[] = {
 		{'c', parse_char}, {'s', parse_string}, {'i', parse_int}, {'d', parse_int},
-		{'%', parse_perc}, {'\0', NULL}
+		{'%', parse_perc}, {'b', parse_binary}, {'o', parse_oct}, {'x', parse_hex},
+		{'u', parse_uint}, {'\0', NULL}
 	};
 
 	if (!format)
 		return (-1);
-
 	va_start(arg, format);
 	while (format && format[i] != '\0')
 	{
@@ -41,10 +41,11 @@ int _printf(const char *format, ...)
 		}
 		else
 			buffer[buff_count] = format[i], buff_count++;
+		for (buff_count; buff_count > 1024; buff_count =- 1024)
+			;
 		i++;
 	}
 	va_end(arg);
-
 	buffer[buff_count] = '\0';
 	print_buff(buffer, buff_count);
 	return (buff_count);
