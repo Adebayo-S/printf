@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 	call_t container[] = {
 		{'R', parse_R13}, {'r', parse_reverse}, {'c', parse_char}, {'s', parse_string}, {'i', parse_int}, {'d', parse_int}, {'%', parse_perc}, {'b', parse_binary}, {'o', parse_oct}, {'x', parse_hex}, {'u', parse_uint}, {'\0', NULL}};
 
+	};
+
 	if (!format)
 		return (-1);
 	va_start(arg, format);
