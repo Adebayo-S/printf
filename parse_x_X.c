@@ -22,7 +22,8 @@ int parse_hex(char *buff_dest, va_list arg, int buff_count)
 	tmp = number;
 	while (hex > 0)
 	{
-		buff_dest[buff_count] = (tmp / hex < 9) ? (tmp / hex + '0') : ('a' + tmp / hex - 10);
+		buff_dest[buff_count] = (tmp / hex < 9) ?
+			(tmp / hex + '0') : ('a' + tmp / hex - 10);
 		tmp %= hex;
 		hex /= 16;
 		buff_count++;
@@ -53,7 +54,8 @@ int parse_X(char *buff_dest, va_list arg, int buff_count)
 	tmp = number;
 	while (hex > 0)
 	{
-		buff_dest[buff_count] = (tmp / hex < 9) ? (tmp / hex + '0') : ('A' + tmp / hex - 10);
+		buff_dest[buff_count] = (tmp / hex < 9) ?
+			(tmp / hex + '0') : ('A' + tmp / hex - 10);
 		tmp %= hex;
 		hex /= 16;
 		buff_count++;
