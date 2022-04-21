@@ -1,30 +1,30 @@
 #include "main.h"
 
 /**
- * parse_string - writes the string
+ * parse_str - writes the string
  * @buff_dest: character string
  * @arg: list of arguments
  * @buff_count: index f buffer pointer
  * Return: The number of characters printed.
  */
-int parse_string(char *buff_dest, va_list arg, int buff_count)
+int parse_str(char *buff_dest, va_list arg, int buff_count)
 {
-	char *value;
+	char *str;
 	int i = 0;
 
-	value = va_arg(arg, char *);
-	if (value == NULL)
-		value = "(null)";
+	str = va_arg(arg, char *);
+	if (str == NULL)
+		str = "(null)";
 
-	if (value[0] == '\0')
+	if (str[0] == '\0')
 	{
 		buff_dest[buff_count] = '\0';
 		buff_count++;
 	}
 
-	while (value[i] != '\0')
+	while (str[i] != '\0')
 	{
-		buff_dest[buff_count] = value[i];
+		buff_dest[buff_count] = str[i];
 		i++;
 		buff_count++;
 	}
