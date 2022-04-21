@@ -26,14 +26,15 @@ int print_buff(char *buff, unsigned int nbuff);
 int str_len(char *s);
 char *_strcpy(char *dest, char *src);
 int parse_char(char *buff_dest, va_list arg, int buff_count);
-int parse_string(char *buff_dest, va_list arg, int buff_count);
+int parse_str(char *buff_dest, va_list arg, int buff_count);
 int parse_int(char *buff_dest, va_list list, int buff_count);
 int parse_perc(char *buff_dest, va_list arg, int buff_count);
 int parse_bin(char *buff_dest, va_list arg, int buff_count);
 int parse_oct(char *buff_dest, va_list arg, int buff_count);
 int parse_hex(char *buff_dest, va_list arg, int buff_count);
+int parse_X(char *buff_dest, va_list arg, int buff_count);
 int parse_uint(char *buff_dest, va_list arg, int buff_count);
-int parse_reverse(char *buff_dest, va_list arg, int buff_count);
+int parse_rev(char *buff_dest, va_list arg, int buff_count);
 int parse_R13(char *buff_dest, va_list arg, int buff_count);
 
 #endif
