@@ -37,6 +37,14 @@ If the program runs successfully, the return value is the amount of chars printe
 | s         | String              |
 | b         | Binary              |
 | %         | Percentage charater |
+| o         | Signed Octal        |
+| u         | Unsigned Integer    |
+| x         | Unsigned Hexadecimal|
+| X         | Unsigned Hexadecimal (uppercase) |
+| p         | Pointer address     |
+| r         | Reversr string of characters |
+| R         | ROT13 translaton of string |
+| S         | String with special chars replaced by their ASCII value |
 
 ## Examples
 
