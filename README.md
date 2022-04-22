@@ -122,6 +122,37 @@ Function that Prints a Percentage symbol.
     /* Indetifier : %% */
 
 ---
+### parse_oct.c
+
+Function that Prints Decimal in Octal.
+
+	/* Indetifier : %o */
+
+---
+
+### parse_hex.c
+
+Function that Prints Decimal in Hexadecimal.
+
+	/* Indetifier : %x */
+
+---
+
+### parse_x_X.c
+
+Function that prints Decimal in Uppercase Hexadecimal.
+
+	/* Indetifier : %X */
+
+---
+
+### parse_unit.c
+
+Function that Prints an Unsigned Integer.
+
+	/* Indetifier : %u */
+
+---
 
 ### parse_buff.c
 
