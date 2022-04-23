@@ -37,6 +37,14 @@ If the program runs successfully, the return value is the amount of chars printe
 | s         | String              |
 | b         | Binary              |
 | %         | Percentage charater |
+| o         | Signed Octal        |
+| u         | Unsigned Integer    |
+| x         | Unsigned Hexadecimal|
+| X         | Unsigned Hexadecimal (uppercase) |
+| p         | Pointer address     |
+| r         | Reversr string of characters |
+| R         | ROT13 translaton of string |
+| S         | String with special chars replaced by their ASCII value |
 
 ## Examples
 
@@ -112,6 +120,37 @@ Function that Prints a Binary.
 Function that Prints a Percentage symbol.
 
     /* Indetifier : %% */
+
+---
+### parse_oct.c
+
+Function that Prints Decimal in Octal.
+
+	/* Indetifier : %o */
+
+---
+
+### parse_hex.c
+
+Function that Prints Decimal in Hexadecimal.
+
+	/* Indetifier : %x */
+
+---
+
+### parse_x_X.c
+
+Function that prints Decimal in Uppercase Hexadecimal.
+
+	/* Indetifier : %X */
+
+---
+
+### parse_unit.c
+
+Function that Prints an Unsigned Integer.
+
+	/* Indetifier : %u */
 
 ---
 
